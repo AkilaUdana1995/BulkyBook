@@ -12,7 +12,7 @@ namespace BulkyBook.Models
 
         [DisplayName("display Order")]
         // [UIHint("UnitsInStock")]
-        [Range(1, 100, ErrorMessage = "plese enter only between 1 to 100")]
+        [Range(1, 150, ErrorMessage = "plese enter only between 1 to 100")]
 
         public int displayOrder { get; set; }
         public DateTime createdDateTime { get; set; } = DateTime.Now;
