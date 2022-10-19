@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Category>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="container p-3">
+    <div class="row">
+        <div class="col-6"><h1>Category List</h1></div>
+        <div class="col-6 text-end">
+            <a asp-controller="Category" asp-action="Create" class=" btn btn-outline-primary " style="font-size:16px">
+                <i class="bi bi-plus-circle"></i>&nbsp;Add New Category
+
+            </a>
+
+        </div>
+    </div>
+    <br /><br />
+
+    @*<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+    <tr>
+    <th>
+    Category Name
+    </th>
+
+    </tr>
+
+    <tr>
+    <th>
+    Display Order
+    </th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var obj in Model)
+    {
+    <tr>
+    <td width="50%">
+    @obj.name
+    </td>
+
+    </tr>
+
+    <tr>
+    <td width="30%">
+    @obj.displayOrder
+    </td>
+
+    </tr>
+    }
+    </tbody>
+    </table>*@
+
+
+
+    <table class="table">
+        <thead>
+
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col"> Category Name</th>
+                <th scope="col"> Display Order</th>
+                <th scope="col"> </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <th scope="row">@obj.id</th>
+                    <td>  @obj.name</td>
+                    <td>  @obj.displayOrder</td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.id" class="btn btn-primary mx-1">
+                                <i class="bi bi-pencil-square"></i>&nbsp;Edit
+                            </a>
+
+                            <a asp-controller="Category" asp-action="Delete" asp-route-id="@obj.id" class="btn btn-danger mx-1">
+                                <i class="bi bi-trash"></i>&nbsp;Delete
+                            </a>
+
+                        </div>
+                    </td>
+
+                   @* <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.id" class="btn btn-primary mx-1">
+                                <i class="bi bi-pencil-square"></i>&nbsp;Edit
+                            </a>
+
+                        </div>
+                    </td>*@
+
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+</div>
+
