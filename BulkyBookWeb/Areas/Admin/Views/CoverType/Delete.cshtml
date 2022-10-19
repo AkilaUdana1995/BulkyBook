@@ -1,0 +1,33 @@
+﻿@model CoverType
+
+<form method="post" asp-action="Delete">
+   @* <input asp-for="id" hidden/>*@
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-secondary">Edit Category</h2>
+        </div>
+        <hr />
+
+        <div asp-validation-summary="All"> </div>
+        <div class="mb-3">
+            <label asp-for="name">
+            </label>
+            <input asp-for="name"  class="form-control" />
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div>
+
+
+      
+        @*        <button asp-controller="Category" asp-action="Create" type="submit" class="btn btn-primary" style="width:150px">Create</button>
+        *@        <button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
+
+        <a asp-controller="Category" asp-action="index" class="btn btn-secondary " style="width:150px">Back to List</a>
+    </div>
+
+</form>
+
+            @section scripts{
+                @{
+        <partial name="_ValidationScriptsPartial" />
+                }
+            }
