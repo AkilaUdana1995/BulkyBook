@@ -14,6 +14,6 @@ namespace BulkyBook.DataAccess.Repository.IRepository
         //method to update records ....
 
         void Update(Category obj);
-        void Save();
+        //void Save();
     }
 }

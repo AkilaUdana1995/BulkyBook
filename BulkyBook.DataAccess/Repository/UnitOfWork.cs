@@ -18,13 +18,14 @@ namespace BulkyBook.DataAccess.Repository
         }
 
     
-    {
+    
         public ICategoryRepository Category { get; private set; }
 
+       // public ICategoryRepository CategoryRepository => throw new NotImplementedException();
 
         public void Save()
         {
-
+            _db.SaveChanges();
         }
     }
 }
