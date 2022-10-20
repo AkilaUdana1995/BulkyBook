@@ -1,11 +1,3 @@
-D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.csproj.AssemblyReference.cache
-D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.GeneratedMSBuildEditorConfig.editorconfig
-D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.AssemblyInfoInputs.cache
-D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.AssemblyInfo.cs
-D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.csproj.CoreCompileInputs.cache
-D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.MvcApplicationPartsAssemblyInfo.cache
-D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.RazorAssemblyInfo.cache
-D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.RazorAssemblyInfo.cs
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\appsettings.Development.json
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\appsettings.json
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BulkyBookWeb.staticwebassets.runtime.json
@@ -304,6 +296,7 @@ D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\refs\WindowsB
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Humanizer.dll
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\MessagePack.dll
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\MessagePack.Annotations.dll
+D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
@@ -352,6 +345,7 @@ D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Microsoft.Vis
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\NuGet.Common.dll
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\NuGet.Configuration.dll
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\NuGet.DependencyResolver.Core.dll
@@ -545,6 +539,15 @@ D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BulkyBook.Dat
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BulkyBook.Models.dll
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BulkyBook.DataAccess.pdb
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BulkyBook.Models.pdb
+D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.csproj.AssemblyReference.cache
+D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.GeneratedMSBuildEditorConfig.editorconfig
+D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.AssemblyInfoInputs.cache
+D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.AssemblyInfo.cs
+D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.csproj.CoreCompileInputs.cache
+D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.MvcApplicationPartsAssemblyInfo.cs
+D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.MvcApplicationPartsAssemblyInfo.cache
+D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.RazorAssemblyInfo.cache
+D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.RazorAssemblyInfo.cs
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\staticwebassets.build.json
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\staticwebassets.development.json
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
@@ -556,4 +559,3 @@ D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\refint\BulkyB
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.pdb
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.genruntimeconfig.cache
 D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\ref\BulkyBookWeb.dll
-D:\nebulex\sample projects\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.MvcApplicationPartsAssemblyInfo.cs

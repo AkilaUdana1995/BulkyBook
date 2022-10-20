@@ -1,10 +1,12 @@
 ﻿using BulkyBook.DataAccess;
 using BulkyBook.DataAccess.Repository.IRepository;
 using BulkyBook.Models;
+using BulkyBook.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Linq;
+using System.Net.Http.Headers;
 
 namespace BulkyBookWeb.Areas.Admin.Controllers;
 [Area("Admin")]
@@ -56,27 +58,52 @@ public class ProductController : Controller
     //upsert method(update + insert)   logic, if id is null or empty, then we create new product object, else we will update it....
         public IActionResult Upsert(int? id)
         {
-        Product product=new ();
-        IEnumerable<SelectListItem> CategoryList = _db.Category.GetAll().Select(
+        //Product product=new ();
+        //IEnumerable<SelectListItem> CategoryList = _db.Category.GetAll().Select(
+        //    u => new SelectListItem
+        //        {
+        //        Text = u.name,
+        //        Value = u.id.ToString()
+        //        }
+        //    );
+
+        //IEnumerable<SelectListItem> CoverTypeList = _db.CoverType.GetAll().Select(
+        //   u => new SelectListItem
+        //       {
+        //       Text = u.name,
+        //       Value = u.id.ToString()
+        //       }
+        //   );
+
+
+        //another way to perform action
+
+        ProductVM productVM = new()
+            {
+            Product = new(),
+            CategoryList = _db.Category.GetAll().Select(
             u => new SelectListItem
                 {
                 Text = u.name,
                 Value = u.id.ToString()
                 }
-            );
-
-        IEnumerable<SelectListItem> CoverTypeList = _db.CoverType.GetAll().Select(
+            ),
+            CoverTypeList = _db.CoverType.GetAll().Select(
            u => new SelectListItem
                {
                Text = u.name,
                Value = u.id.ToString()
                }
-           );
+           )
+
+        };
+
 
         if (id == null || id == 0)
             {
-            ViewBag.CategoryList = CategoryList;
-            return View(product);
+            //ViewBag.CategoryList = CategoryList;
+            //ViewData["CoverTypeList"] = CoverTypeList;
+            return View(productVM);
                //craete product
             }
 
@@ -86,21 +113,21 @@ public class ProductController : Controller
             }
          
            
-            return View();
+            return View(productVM);
         }
 
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Product obj)
+        public IActionResult Upsert(ProductVM obj , IFormFile file)
         {
 
         
             if (ModelState.IsValid)
             {
-                _db.Product.Update(obj);
+              //  _db.CoverType.Update(obj);
                 _db.Save();
-                TempData["success"] = "Product Updated Succesfully!!";
+                TempData["success"] = "CoverType Updated Succesfully!!";
                 return RedirectToAction("Index");
             }
             return View(obj);
