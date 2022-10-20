@@ -7,12 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\**" />
     <Compile Remove="Models\**" />
     <Compile Remove="Views\CategoriesTemp\**" />
+    <Content Remove="Controllers\**" />
     <Content Remove="Models\**" />
     <Content Remove="Views\CategoriesTemp\**" />
+    <EmbeddedResource Remove="Controllers\**" />
     <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="Views\CategoriesTemp\**" />
+    <None Remove="Controllers\**" />
     <None Remove="Models\**" />
     <None Remove="Views\CategoriesTemp\**" />
   </ItemGroup>
