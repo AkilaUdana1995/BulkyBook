@@ -2,7 +2,7 @@
 <form method="post" asp-action="Upsert" enctype="multipart/form-data">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-secondary">Product Management Console </h2>
+            <h2 class="text-secondary">@(Model.Product.Id != 0 ? "Update" : "Create") Product  </h2>
         </div>
         <hr />
 
@@ -17,7 +17,7 @@
         <div class="mb-3">
             <label asp-for="Product.Description">
             </label>
-            <input asp-for="Product.Description" class="form-control" />
+            <textarea asp-for="Product.Description" class="form-control"></textarea>
             <span asp-validation-for="Product.Description" class="text-danger"></span>
         </div>
         <div class="row">
@@ -79,7 +79,7 @@
         <div class="mb-3 ">
             <label asp-for="Product.ImageURL">
             </label>
-            <input type="file" asp-for="Product.ImageURL" class="form-control" />
+            <input type="file" id="UploadBox" asp-for="Product.ImageURL" class="form-control" />
             @* <span asp-validation-for="Product.ImageURL" class="text-danger"></span>*@
         </div>
         @*
@@ -135,21 +135,45 @@
 
 
         @*        <button asp-controller="Category" asp-action="Create" type="submit" class="btn btn-primary" style="width:150px">Create</button>
-        *@       
+        *@
 
-        <div class="col-12 mx-1">
-            <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+        <div class="row col-md-12 offset-md-3 ">
+            @if (Model.Product.Id != 0)
+                {
+                <button type="submit" class="btn btn-primary" style="width:20vw;margin:3px;">Update</button>
 
-            <a asp-controller="Category" asp-action="index" class="btn btn-secondary " style="width:150px">Back to List</a>
+                }
+            else
+                {
+                <button type="submit" onclick="return ValidateInput()" class="btn btn-primary" style="width:20vw;margin:3px;">Create</button>
+                }
+
+            <a asp-controller="Category" asp-action="index" class="btn btn-secondary" style="width:20vw;margin:3px">Back to List</a>
+
         </div>
-        
-      
+
     </div>
 
 </form>
 
 @section scripts{
     @{
-        <partial name="_ValidationScriptsPartial" />
+    <partial name="_ValidationScriptsPartial" />
     }
+
+
+    <script>
+        function ValidateInput(){
+            if (document.getElementById("UploadBox").value == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please upload file',
+                    
+                });
+                return false
+            }
+            return true;
+        }
+    </script>
             }
