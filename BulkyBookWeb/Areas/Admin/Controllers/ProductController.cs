@@ -25,8 +25,11 @@ public class ProductController : Controller
         }
     public IActionResult Index()
         {
-        IEnumerable<Product> objCategoryList = _db.Product.GetAll();  //_db then get db set name
-        return View(objCategoryList);
+        //IEnumerable<Product> objCategoryList = _db.Product.GetAll();  //_db then get db set name
+        //return View(objCategoryList);    //28/29 line methods also working......
+
+        //here in this way, trying to perform same task via API controllers
+        return View();
         }
 
     //GET
@@ -122,8 +125,9 @@ public class ProductController : Controller
     //POST
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Upsert(ProductVM obj, IFormFile? file)
+    public IActionResult Upsert(ProductVM obj, IFormFile file)
         {
+
 
 
         if (ModelState.IsValid)
@@ -132,7 +136,7 @@ public class ProductController : Controller
             if (file != null)
                 {
                 string fileName = Guid.NewGuid().ToString();
-                var uploads = Path.Combine(wwwRootPath, @"images\products");
+                var uploads = Path.Combine(wwwRootPath, @"Images\Products");
                 var extention = Path.GetExtension(file.FileName);
 
                 using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extention), FileMode.Create))
@@ -140,7 +144,7 @@ public class ProductController : Controller
                     file.CopyTo(fileStreams);
                     }
 
-                obj.Product.ImageURL = @"\images\Products" + fileName + extention;
+                obj.Product.ImageURL = @"\Images\Products\" + fileName + extention;
                 }
 
 
@@ -189,5 +193,16 @@ public class ProductController : Controller
         return View(obj);
 
         }
+
+    #region API CALLS
+    [HttpGet]
+    public IActionResult GetAll()
+        {
+        var ProductList = _db.Product.GetAll();
+        return Json(ProductList);
+        //  return Json(new {data= ProductList });
+
+        }
+    #endregion
     }
 

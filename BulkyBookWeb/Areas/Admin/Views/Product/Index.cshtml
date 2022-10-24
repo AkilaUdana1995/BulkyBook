@@ -16,16 +16,16 @@
 
 
 
-    <table class="table">
+    <table id="myTable" class="table">
         <thead>
 
             <tr>
-                <th scope="col">#</th>
+               @* <th scope="col">#</th>*@
                 <th scope="col"> Title</th>
                 <th scope="col"> ISBN</th>
                 <th scope="col"> Price</th>
-                  <th scope="col"> Author</th>
-                  <th scope="col"> Category</th>
+                <th scope="col"> Author</th>
+                 @* <th scope="col"> Category</th>*@
 
             </tr>
         </thead>
@@ -66,4 +66,11 @@
     </table>
 
 </div>
+
+
+@section Scripts{
+    <script src="~/js/product.js">
+
+    </script>
+}
 
