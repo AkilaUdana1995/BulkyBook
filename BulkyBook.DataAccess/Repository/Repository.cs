@@ -45,6 +45,8 @@ namespace BulkyBook.DataAccess.Repository
         {
 
             IQueryable<T> query = Dbset;
+            query = query.Where(filter);
+
             if (includeProperties != null)
                 {
                 foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
@@ -52,7 +54,7 @@ namespace BulkyBook.DataAccess.Repository
                     query = query = query.Include(includeProp);
                     }
                 }
-            query = query.Where(filter);
+           
             return query.FirstOrDefault();
         }
 

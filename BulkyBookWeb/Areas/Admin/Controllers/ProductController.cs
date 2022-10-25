@@ -243,7 +243,7 @@ public class ProductController : Controller
     [HttpGet]
     public IActionResult GetAll()
         {
-        var ProductList = _db.Product.GetAll();
+        var ProductList = _db.Product.GetAll(includeProperties:"Category");
         // return Json(ProductList);
         return Json(new { data = ProductList });
 
