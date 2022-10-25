@@ -11,8 +11,8 @@ namespace BulkyBook.DataAccess.Repository.IRepository
     public interface IRepository <T> where T : class
     {
         //T - Category
-        T GetFirstOrDefault(Expression<Func<T, bool>> filter);  //this is for edit record......
-        IEnumerable<T> GetAll ();  //this will return all categories
+        T GetFirstOrDefault(Expression<Func<T, bool>> filter,string? includeProperties=null);  //this is for edit record......
+        IEnumerable<T> GetAll (string? includeProperties = null);  //this will return all categories
 
         void Add (T entity); //this for adding
         void Remove(T entity); //this for delete

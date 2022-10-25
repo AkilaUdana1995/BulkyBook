@@ -19,6 +19,8 @@ namespace BulkyBook.DataAccess.Repository
         {
             _db = db;
             this.Dbset = _db.Set<T>();
+           // _db.Products.Include(u=>u.Category).Include(u=>u.CoverType);
+        
         }
         public void Add(T entity)
         {
@@ -26,16 +28,30 @@ namespace BulkyBook.DataAccess.Repository
             //  _db.Categories.Add(entity);   same like what I did in controller menu.....
         }
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<T> GetAll(string? includeProperties = null)
         {
             IQueryable<T> query = Dbset;
+            if (includeProperties!=null)
+                {
+                foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                    {
+                    query=query = query.Include(includeProp);   
+                    }
+                }
             return query.ToList();
         }
 
-        public T GetFirstOrDefault(Expression<Func<T, bool>> filter)
+        public T GetFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProperties = null)
         {
 
             IQueryable<T> query = Dbset;
+            if (includeProperties != null)
+                {
+                foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                    {
+                    query = query = query.Include(includeProp);
+                    }
+                }
             query = query.Where(filter);
             return query.FirstOrDefault();
         }

@@ -24,13 +24,17 @@ public class ProductController : Controller
         _webHostEnvironment = webHostEnvironment;
         }
     public IActionResult Index()
-        {
-        //IEnumerable<Product> objCategoryList = _db.Product.GetAll();  //_db then get db set name
+        { return View();
+        }
+        //{
+        //IEnumerable<Product> objCategoryList = _db.Product.GetAll(includeProperties:"Category,CoverType");  //_db then get db set name
         //return View(objCategoryList);    //28/29 line methods also working......
 
-        //here in this way, trying to perform same task via API controllers
-        return View();
-        }
+        ////here in this way, trying to perform same task via API controllers
+        //return View();
+        //}
+
+       
 
     //GET
 
@@ -194,13 +198,54 @@ public class ProductController : Controller
 
         }
 
+
+    //test
+
+
+    //public IActionResult Edit(int? id)
+    //    {
+    //    if (id == null || id == 0)
+    //        {
+    //        return NotFound();
+    //        }
+    //    //  var categoryFromDb = _db.Categories.Find(id);
+    //    var categoryDbFirst = _db.Product.GetFirstOrDefault(u => u.Id == id);
+    //    //  var categoryDbSingleOrDefault = _db.Categories.FirstOrDefault(u => u.id == id);
+    //    if (categoryDbFirst == null)
+    //        {
+    //        return NotFound();
+    //        }
+    //    return View(categoryDbFirst);
+    //    }
+
+    ////POST
+    //[HttpPost]
+    //[ValidateAntiForgeryToken]
+    //public IActionResult Edit(Product obj)
+    //    {
+
+
+    //    if (ModelState.IsValid)
+    //        {
+    //        _db.Product.Update(obj);
+    //        _db.Save();
+    //        TempData["success"] = "Product Updated Succesfully!!";
+    //        return RedirectToAction("Index");
+    //        }
+    //    return View(obj);
+
+    //    }
+
+
+    //test
+
     #region API CALLS
     [HttpGet]
     public IActionResult GetAll()
         {
         var ProductList = _db.Product.GetAll();
-        return Json(ProductList);
-        //  return Json(new {data= ProductList });
+        // return Json(ProductList);
+        return Json(new { data = ProductList });
 
         }
     #endregion

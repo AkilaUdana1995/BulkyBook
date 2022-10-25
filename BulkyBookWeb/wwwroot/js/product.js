@@ -5,23 +5,24 @@ $(document).ready(function () {
 });
 
 function loadDataTable() {
-    dataTable = $('#myTable').DataTable({
-        ajax: {
-            url:"/Admin/Product/GetAll"
+    dataTable = $('#tblData').DataTable({
+
+        "ajax": {
+            "url": "/Admin/Product/GetAll"
+
         },
-        ajax: 'data/objects.txt',
 
         "columns": [
-            { data: "title"},
-            { data: "isbn"},
-            { data: "price"},
-            { data: "author"},
-
+            { data: "title", "width": "25%" },
+            { data: "isbn", "width": "15%" },
+            { data: "price", "width": "15%" },
+            { data: "author", "width": "15%" },
+           /* { data: "category.name,", "width": "15%" },*/
         ]
 
     });
 
-    alert('Data source: ' + dataTable.ajax.url());
+
 
 
     //var table = $('#myTable').DataTable({
@@ -31,4 +32,13 @@ function loadDataTable() {
 
     //alert('Data source: ' + table.ajax.url());
     //alert('Data source: ' + dataTable.ajax.url());
+
+
+
+    //$('#example').dataTable({
+    //    "ajax": {
+    //        "url": "data.json",
+    //        "type": "POST"
+    //    }
+    //});
 }

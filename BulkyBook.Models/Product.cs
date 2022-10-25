@@ -22,22 +22,22 @@ namespace BulkyBook.Models
         [Required]
         public string Author { get; set; }
         [Required]
-        [Range(1, 10000)]
+        [Range(1, 100000)]
         [DisplayName("List Price")]
         public double ListPrice { get; set; }
 
         [Required]
-        [Range(1, 10000)]
+        [Range(1, 100000)]
         public double Price { get; set; }
 
         [Required]
-        [Range(1, 10000)]
+        [Range(1, 100000)]
         [DisplayName("Whole Sale 50 Pcs")]
 
         public double Price50 { get; set; }
 
         [Required]
-        [Range(1, 10000)]
+        [Range(1, 100000)]
         [DisplayName("Whole Sale 100 Pcs")]
         public double Price100 { get; set; }
 
