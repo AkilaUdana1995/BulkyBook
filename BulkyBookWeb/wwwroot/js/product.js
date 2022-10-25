@@ -18,6 +18,28 @@ function loadDataTable() {
             { data: "price", "width": "15%" },
             { data: "author", "width": "15%" },
             { data: "category.name", "width": "15%" },
+
+
+          /* <button type="button">Can you click me?</button>*/
+            {
+                data: "id",
+                render: function (data) {
+                    return `
+                        <div class="w-75 btn-group" role="group">
+                            <a href="/Admin/Product/Upsert?id=${data}" class="btn btn-primary mx-1">
+                                <i class="bi bi-pencil-square"></i>&nbsp;Edit me
+                            </a>
+
+                            <a  class="btn btn-danger mx-1">
+                                <i class="bi bi-trash"></i>&nbsp;Delete
+                            </a>
+
+                        </div>
+                   `
+                },
+                "width": "20%"
+            }
+           
         ]
 
     });
