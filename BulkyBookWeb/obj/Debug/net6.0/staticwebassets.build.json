@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5mPkqzryE+wGDxUy6LMKfCnIRW3aMOeoQ48mZz4tMfM=",
+  "Hash": "U5hvM6rbIcx0U7M4nNNhB04H+mA1uCKuwbUh/G83Tgc=",
   "Source": "BulkyBookWeb",
   "BasePath": "_content/BulkyBookWeb",
   "Mode": "Default",
@@ -102,12 +102,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\nebulex\\sample projects\\BulkyBook\\BulkyBookWeb\\wwwroot\\Images\\Products\\40d494f0-732d-495d-b68c-34daa09b36d7.jpg",
+      "Identity": "D:\\nebulex\\sample projects\\BulkyBook\\BulkyBookWeb\\wwwroot\\Images\\Products\\35e5ba23-55b8-41ae-9d49-9cdf340bed90.jpg",
       "SourceId": "BulkyBookWeb",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\nebulex\\sample projects\\BulkyBook\\BulkyBookWeb\\wwwroot\\",
       "BasePath": "_content/BulkyBookWeb",
-      "RelativePath": "Images/Products/40d494f0-732d-495d-b68c-34daa09b36d7.jpg",
+      "RelativePath": "Images/Products/35e5ba23-55b8-41ae-9d49-9cdf340bed90.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,15 +116,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Products\\40d494f0-732d-495d-b68c-34daa09b36d7.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\35e5ba23-55b8-41ae-9d49-9cdf340bed90.jpg"
     },
     {
-      "Identity": "D:\\nebulex\\sample projects\\BulkyBook\\BulkyBookWeb\\wwwroot\\Images\\Products\\6bfd5acb-d2bb-4ede-a07c-98b5e6bd090a.jpg",
+      "Identity": "D:\\nebulex\\sample projects\\BulkyBook\\BulkyBookWeb\\wwwroot\\Images\\Products\\e18adb15-17c5-4eda-ac3a-58b04518086e.jpg",
       "SourceId": "BulkyBookWeb",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\nebulex\\sample projects\\BulkyBook\\BulkyBookWeb\\wwwroot\\",
       "BasePath": "_content/BulkyBookWeb",
-      "RelativePath": "Images/Products/6bfd5acb-d2bb-4ede-a07c-98b5e6bd090a.jpg",
+      "RelativePath": "Images/Products/e18adb15-17c5-4eda-ac3a-58b04518086e.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -133,41 +133,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Products\\6bfd5acb-d2bb-4ede-a07c-98b5e6bd090a.jpg"
-    },
-    {
-      "Identity": "D:\\nebulex\\sample projects\\BulkyBook\\BulkyBookWeb\\wwwroot\\Images\\Products\\b943f514-f738-44a5-9b7c-340e994954ed.png",
-      "SourceId": "BulkyBookWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\nebulex\\sample projects\\BulkyBook\\BulkyBookWeb\\wwwroot\\",
-      "BasePath": "_content/BulkyBookWeb",
-      "RelativePath": "Images/Products/b943f514-f738-44a5-9b7c-340e994954ed.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Products\\b943f514-f738-44a5-9b7c-340e994954ed.png"
-    },
-    {
-      "Identity": "D:\\nebulex\\sample projects\\BulkyBook\\BulkyBookWeb\\wwwroot\\Images\\Products\\c498ded2-6e88-467a-a08b-8de921397717.jpg",
-      "SourceId": "BulkyBookWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\nebulex\\sample projects\\BulkyBook\\BulkyBookWeb\\wwwroot\\",
-      "BasePath": "_content/BulkyBookWeb",
-      "RelativePath": "Images/Products/c498ded2-6e88-467a-a08b-8de921397717.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Products\\c498ded2-6e88-467a-a08b-8de921397717.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\e18adb15-17c5-4eda-ac3a-58b04518086e.jpg"
     },
     {
       "Identity": "D:\\nebulex\\sample projects\\BulkyBook\\BulkyBookWeb\\wwwroot\\js\\product.js",

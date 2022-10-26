@@ -120,10 +120,12 @@ public class ProductController : Controller
         else
             {
             //update product
+            productVM.Product = _db.Product.GetFirstOrDefault(u=>u.Id==id);
+            return View(productVM);
             }
 
 
-        return View(productVM);
+        
         }
 
     //POST
@@ -131,7 +133,6 @@ public class ProductController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Upsert(ProductVM obj, IFormFile file)
         {
-
 
 
         if (ModelState.IsValid)
@@ -143,6 +144,15 @@ public class ProductController : Controller
                 var uploads = Path.Combine(wwwRootPath, @"Images\Products");
                 var extention = Path.GetExtension(file.FileName);
 
+                if (obj.Product.ImageURL!=null)
+                    {
+                    var oldImagePath=Path.Combine(wwwRootPath, obj.Product.ImageURL.TrimStart('\\'));
+                    if (System.IO.File.Exists(oldImagePath))
+                        {
+                        System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
                 using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extention), FileMode.Create))
                     {
                     file.CopyTo(fileStreams);
@@ -150,10 +160,16 @@ public class ProductController : Controller
 
                 obj.Product.ImageURL = @"\Images\Products\" + fileName + extention;
                 }
+            if(obj.Product.Id==0)
+                {
+                _db.Product.Add(obj.Product);
+                }
+            else
+                {
+                _db.Product.Update(obj.Product);
+                }
 
-
-
-            _db.Product.Add(obj.Product);
+           
             _db.Save();
             TempData["success"] = "Product Created  Succesfully!!";
             return RedirectToAction("Index");

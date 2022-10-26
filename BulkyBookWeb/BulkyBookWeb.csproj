@@ -9,15 +9,19 @@
   <ItemGroup>
     <Compile Remove="Controllers\**" />
     <Compile Remove="Models\**" />
+    <Compile Remove="tempModels\**" />
     <Compile Remove="Views\CategoriesTemp\**" />
     <Content Remove="Controllers\**" />
     <Content Remove="Models\**" />
+    <Content Remove="tempModels\**" />
     <Content Remove="Views\CategoriesTemp\**" />
     <EmbeddedResource Remove="Controllers\**" />
     <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="tempModels\**" />
     <EmbeddedResource Remove="Views\CategoriesTemp\**" />
     <None Remove="Controllers\**" />
     <None Remove="Models\**" />
+    <None Remove="tempModels\**" />
     <None Remove="Views\CategoriesTemp\**" />
   </ItemGroup>
 
