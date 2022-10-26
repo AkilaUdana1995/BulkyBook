@@ -5,6 +5,7 @@ using BulkyBook.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
@@ -181,38 +182,38 @@ public class ProductController : Controller
     //method to delete object
 
     //GET
-    public IActionResult Delete(int? id)
-        {
-        if (id == null || id == 0)
-            {
-            return NotFound();
-            }
-        //   var categoryFromDb = _db.Categories.Find(id);
-        var categoryDbFirst = _db.Product.GetFirstOrDefault(u => u.Id == id);
-        if (categoryDbFirst == null)
-            {
-            return NotFound();
-            }
-        return View(categoryDbFirst);
-        }
+    //public IActionResult Delete(int? id)
+    //    {
+    //    if (id == null || id == 0)
+    //        {
+    //        return NotFound();
+    //        }
+    //    //   var categoryFromDb = _db.Categories.Find(id);
+    //    var categoryDbFirst = _db.Product.GetFirstOrDefault(u => u.Id == id);
+    //    if (categoryDbFirst == null)
+    //        {
+    //        return NotFound();
+    //        }
+    //    return View(categoryDbFirst);
+    //    }
 
-    //POST
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public IActionResult Delete(Product obj)
-        {
+    ////POST
+    //[HttpPost]
+    //[ValidateAntiForgeryToken]
+    //public IActionResult Delete(Product obj)
+    //    {
 
 
-        if (ModelState.IsValid)
-            {
-            _db.Product.Remove(obj);
-            _db.Save();
-            TempData["success"] = "Category Deleted Succesfully!!";
-            return RedirectToAction("Index");
-            }
-        return View(obj);
+    //    if (ModelState.IsValid)
+    //        {
+    //        _db.Product.Remove(obj);
+    //        _db.Save();
+    //        TempData["success"] = "Category Deleted Succesfully!!";
+    //        return RedirectToAction("Index");
+    //        }
+    //    return View(obj);
 
-        }
+    //    }
 
 
     //test
@@ -262,6 +263,52 @@ public class ProductController : Controller
         var ProductList = _db.Product.GetAll(includeProperties:"Category");
         // return Json(ProductList);
         return Json(new { data = ProductList });
+
+        }
+
+
+    [HttpDelete]
+    public IActionResult Delete(int? id)
+        {
+        if (id == null || id == 0)
+            {
+            return NotFound();
+            }
+        //   var categoryFromDb = _db.Categories.Find(id);
+        var obj = _db.Product.GetFirstOrDefault(u => u.Id == id);
+        if (obj == null)
+            {
+            return Json(new { success = false, message = "erroe" });
+            }
+
+        var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, obj.ImageURL.TrimStart('\\'));
+        if (System.IO.File.Exists(oldImagePath))
+            {
+            System.IO.File.Delete(oldImagePath);
+            }
+
+        _db.Product.Remove(obj);
+        _db.Save();
+        return Json(new { success = true, message = "erroe" });
+      //  return RedirectToAction("Index");
+        //  return View(categoryDbFirst);
+        }
+
+    //POST
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Delete(Product obj)
+        {
+
+
+        if (ModelState.IsValid)
+            {
+            _db.Product.Remove(obj);
+            _db.Save();
+            TempData["success"] = "Category Deleted Succesfully!!";
+            return RedirectToAction("Index");
+            }
+        return View(obj);
 
         }
     #endregion

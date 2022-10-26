@@ -30,8 +30,9 @@ function loadDataTable() {
                                 <i class="bi bi-pencil-square"></i>&nbsp;Edit me
                             </a>
 
-                            <a  class="btn btn-danger mx-1">
-                                <i class="bi bi-trash"></i>&nbsp;Delete
+                            <a onClick=Delete('/Admin/Product/Delete?id=${data}') class="btn btn-danger mx-1">
+
+                                <i onClick=Delete('/Admin/Product/Delete?id=${data}') class="bi bi-trash"></i>&nbsp;Delete
                             </a>
 
                         </div>
@@ -63,4 +64,33 @@ function loadDataTable() {
     //        "type": "POST"
     //    }
     //});
+}
+
+
+function Delete(url) {
+    Swal.fire({
+        title: 'Do you want to save the changes?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Save',
+        denyButtonText: `Don't save`,
+    }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            $.ajax({
+                url: url,
+                type: 'DELETE',
+                success: function (data) {
+                    if (data.success) {
+                        dataTable.ajax.reload();
+                        toaster.success(data.message);
+                    }
+
+                    else {
+                        toaster.error(data.message);
+                    }
+                }
+            })
+        } 
+    })
 }
